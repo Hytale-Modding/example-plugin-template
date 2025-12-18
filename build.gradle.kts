@@ -69,6 +69,20 @@ tasks.withType<Jar> {
                 .getOrElse(version.toString())
     }
 }
+
+publishing {
+    repositories {
+        // This is where you put repositories that you want to publish to.
+        // Do NOT put repositories for your dependencies here.
+    }
+
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["java"])
+        }
+    }
+}
+
 // IDEA no longer automatically downloads sources/javadoc jars for dependencies, so we need to explicitly enable the behavior.
 idea {
     module {
