@@ -7,5 +7,3 @@ internal val ExtensionContainer.hytale: HytaleExtension
 
 internal val ExtensionContainer.ideaExt: IdeaModel
     get() = this.getByName<IdeaModel>("idea")
-
-

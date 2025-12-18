@@ -1,5 +1,4 @@
 plugins {
-    idea
     `maven-publish`
     id("hytale-plugin")
 }
@@ -39,10 +38,16 @@ val generateMetadataFile = tasks.register("generateMetadataFile", ProcessResourc
         "plugin_author" to findProperty("plugin_author")
     )
 
+    val inputDir = "src/main/templates"
+    val outputDir = "build/generated/sources/customMetadata"
+
     inputs.properties(replaceProperties)
+    inputs.dir(inputDir)
+    outputs.dir(outputDir)
+
     expand(replaceProperties)
-    from("src/main/templates")
-    into("build/generated/sources/customMetadata")
+    from(inputDir)
+    into(outputDir)
 }
 
 hytale {
