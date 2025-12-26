@@ -1,6 +1,6 @@
 plugins {
     `maven-publish`
-    id("hytale-plugin")
+    id("hytale-mod") version "0.+"
 }
 
 group = "com.example"
