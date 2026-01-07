@@ -26,7 +26,8 @@ java {
 
 val generateMetadataFile = tasks.register("generateMetadataFile", ProcessResources::class) {
     var replaceProperties = mapOf(
-        "plugin_group" to project.group,
+        "plugin_group" to findProperty("plugin_group"),
+        "plugin_maven_group" to project.group,
         "plugin_name" to project.name,
         "plugin_version" to project.version,
         "server_version" to findProperty("server_version"),
