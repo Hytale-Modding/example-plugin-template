@@ -2,9 +2,13 @@
 jetbrains-annotations = "26.0.2-1"
 jspecify = "1.0.0"
 
+bettermodlist = "1.+"
+
 [libraries]
 jetbrains-annotations = { module = "org.jetbrains:annotations", version.ref = "jetbrains-annotations" }
 jspecify = { module = "org.jspecify:jspecify", version.ref = "jspecify" }
+
+bettermodlist = { module = "com.buuz135:BetterModlist", version.ref = "bettermodlist" }
 
 [bundles]
 

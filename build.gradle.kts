@@ -9,11 +9,22 @@ val javaVersion = 25
 
 repositories {
     mavenCentral()
+    maven("https://maven.hytale-modding.info/releases") {
+        name = "HytaleModdingReleases"
+        credentials {
+            username = "tmp_viewer"
+            password = "01KDD2ARZ795FTWBW0A97RP5RS"
+        }
+    }
 }
 
 dependencies {
     compileOnly(libs.jetbrains.annotations)
     compileOnly(libs.jspecify)
+
+    // this mod is optional, but is included so you can preview your mod icon
+    // in the in-game mod list via the /modlist command
+    runtimeOnly(libs.bettermodlist)
 }
 
 java {
