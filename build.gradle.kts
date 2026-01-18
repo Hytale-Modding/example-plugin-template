@@ -83,9 +83,10 @@ publishing {
 }
 
 // IDEA no longer automatically downloads sources/javadoc jars for dependencies, so we need to explicitly enable the behavior.
+val runningOnCI = providers.environmentVariable("CI").orNull.toBoolean()
 idea {
     module {
-        isDownloadSources = true
-        isDownloadJavadoc = true
+        isDownloadSources = !runningOnCI
+        isDownloadJavadoc = !runningOnCI
     }
 }
